@@ -20,8 +20,8 @@ public class Book {
     private Long id;
     private String title;
     private String author;
-    private int priceUsd;
-    private int priceEur;
-    private int priceUah;
+    private Long priceUsd;
+    private Long priceEur;
+    private Long priceUah;
 
 }

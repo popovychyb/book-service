@@ -19,11 +19,8 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookDto getBook(Long id) {
         log.info("Get book by id {}", id);
-        if (!bookRepository.existsById(id)) {
-            throw new BookNotFoundException();
-        }
-        Book book = bookRepository.getById(id);
-        return mapBookToBookDto(book);
+        return mapBookToBookDto(bookRepository.findById(id)
+                .orElseThrow(BookNotFoundException::new));
     }
 
     @Override

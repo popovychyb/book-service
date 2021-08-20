@@ -20,5 +20,4 @@ public class ErrorHandlingController {
     public Error handleBookNotFoundException(BookNotFoundException exception) {
         return new Error(exception.getMessage(), ErrorType.DATABASE_ERROR_TYPE, LocalDateTime.now());
     }
-
 }
